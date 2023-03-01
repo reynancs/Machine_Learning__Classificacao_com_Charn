@@ -1,49 +1,37 @@
-# Aplicação de Machine Learning em Modelos de Credit Scoring
-
-![Como Funciona](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/reyna/OneDrive/Imagens/concessao_credito.jpg?version%3D1677532920963)
+# Aplicação de Machine Learning em um Caso de Churn
 
 
 ## :dart: Objetivo
-Desenvolver conhecimentos de Machine Learning aplicado no mercado Financeiro através do Curso de Machine Learning: Credit Scoring da Alura, com um case na Concessão de Créditos utilizando um dataset com informações reais do Banco Alemão Statlog (German Credit Data) extraídos do repositírio UCI. Como next steps, o objetivo é realizar ajustes deste modelo para obter uma melhor desempenho. 
+Desenvolver conhecimentos de Machine Learning aplicado no mercado Financeiro através do Curso de Machine Learning da Alura, dataset de uma empresa de telecomunicações, onde foi solicitado ao Cientista de Dados que desenvolvesse um modelo de machine learning para que posssa Classificar seus clientes com a Taxa de Evasão de Clientes (Churn)
 
 ## :bookmark: Contexto
-Neste projeto, vamos entender como o Machine Learning também está inserido no mercado financeiro. A concessão de crédito faz parte da nosso dia-a-dia, como: cartões de crédito, empréstimos pessoais e consignados, financiamento de veículos e imobiliários, são apenas alguns dos exemplos de como o crédito está inserido na nossa rotina.
+Muitas empresas de diversos segmentos adotam esta Métrica Churn por ser muito importante já que possibilita prever o comportamento para reter seus clientes, você pode analisar todos os dados relevantes do cliente e desenvolver programas de retenção focados no cliente. Esta métrica se torna tão mais necessária quando a receita da empresa depende do número de assinantes de uma plataforma, como por exemplo: Spotify, Zen. 
 
-**Os 04 pilares da Cadeia de Créditos:**
-- Prospecção;
-- Concessão;
-- Gestão de Risco;
-- Recuperação;
+Este Dataset utilizado, consiste em dados limpos de atividade do cliente (features), juntamente com um rótulo de churn especificando se um cliente cancelou a assinatura, será usado para desenvolver modelos preditivos.
+Churn é uma métrica utilizada para mostrar o número de clientes que cancelam serviço em um determinado período de tempo.
 
-Entretanto, o contexto deste projeto é voltado para: ***Concessão de Crédito***
-
-
-**Credit Scoring**
-
-Ou "Pontuação de Crédito" conforme sua tradução, é um modelo estatístico multivariado que cria um modelo matemático e estima, através de uma probabilidade, a chance do nosso cliente ser adimplente ou inadimplente. Dependendo da pontuação o tomador receberá o crédito para o empréstimo.
-
-A Regressão Logistica é a técnica mais utilizada no sistema financeiro e a qual iremos utilizar para classificar os possíveis eventos: adimplentes ou inadimplentes. 
-
-É importante que as empresas de cartão de crédito sejam capazes de reconhecer transações fraudulentas com cartão de crédito para que os clientes não sejam cobrados por itens que não compraram e não causarem prejuízos.
 
 ## :pushpin: Considerações do Dataset
-Este conjunto de dados foi disponibilizado pelo Statlog (German Credit Data) dados reais, onde classifica as pessoas descritas por um conjunto de atributos como bons ou maus riscos de crédito.
-- A Base de Dados disponibilizada já esta com as informações traduzidas conforme dicionário de dados disponibilizado;
-- A Base de Dados contém ***informações sensíveis***, como o sexo da pessoa, a qual não deve ser considerado no modelo de acordo com as regulamentações do Banco Central.
+Este conjunto de dados foi extraído do repositório Kaggle (Telecom Churn Dataset) dados reais, onde classifica as pessoas descritas por um conjunto de atributos como bons ou maus riscos de crédito.
+- A Base de Dados utilizada neste exemplo foi a `dados/Customer-Churn.csv` já traduzidas, contendo 7043 registros;
+- Variável Resposta `churn`, onde: 0 =  Cliente Continua | 1 =  Deixa de ser cliente
 - A variável `default` é a nossa variável resposta, onde: 0 = Credito Não Concedido | 1 = Crédito Concedido;
 
-[Fonte dos Dados](https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data))
+
 
 ## :computer: Conteúdo
 O Projeto foi organizados nos seguintes tópicos para uma melhor organização e compressão:
-1. Sobre o Dataset do projeto e Análise Exploratória dos dados;
-2. Transformação dos Dados
-3. Declaração de Funções para os modelos;
-4. Preparação dos dados de treino e teste;
-5. Gerando o Modelo;
-6. Gerando as Métricas;
-7. Considerações Finais;
+1. Dataset - Lendo o Dataset e visualizando os dados;
+2. Preparação dos dados de treino e teste (Split dos dados, Normalização);
+3. Implementando o Modelo (KNN, BernoulliNB,DecisionTree)
+5. Validação dos Modelos (MatrixConfusion, Accurance, Precision, Recall Scores);
+6. Escolhendo o melhor Modelo;
 
 ## :closed_book: Conclusão
-Olhando para as métricas, podemos perceber que a acurácia, por exemplo, não é um bom parâmetro para avaliarmos o modelo que foi desenvolvido em cima de uma base de dados desbalanceados, isso porque os parâmetros do modelo não diferenciam a classe majoritária da minoritária. Através do cálcula da área ROC, obtivemos o valor de 0,764, que de acordo com a convenção estatística, temos uma discriminação aceitável.
+Agora, ao final deste case conseguimos responder o problema de negócio proposto: ***Qual modelo classifica melhor nossos clientes?***
+Neste estudo foi decidido considerar a métrica de precisão que mede quantos valores positivos foram previstos de forma correta com um todo no nosso modelo. Lembrando que os verdadeiros positivos é o foco, aquele onde Churn =1. Sendo assim, é este Churn que precisamos dar atenção, é o Churn que temos que reduzir, são clientes que estão deixando a empresa, reduzindo seus ganhos.
 
+
+
+## :bulb: Referências
+[Churn Dataset Kaggle](https://www.kaggle.com/datasets/mnassrib/telecom-churn-datasets?select=churn-bigml-20.csv)
