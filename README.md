@@ -31,7 +31,7 @@ O Projeto foi organizados nos seguintes tópicos para uma melhor organização e
 Agora, ao final deste case conseguimos responder o problema de negócio proposto: ***Qual modelo classifica melhor nossos clientes?***
 Neste estudo foi decidido considerar a métrica de precisão que mede quantos valores positivos foram previstos de forma correta com um todo no nosso modelo. Lembrando que os verdadeiros positivos é o foco, aquele onde Churn =1. Sendo assim, é este Churn que precisamos dar atenção, é o Churn que temos que reduzir, são clientes que estão deixando a empresa, reduzindo seus ganhos.
 
-
+.
 
 ## :bulb: Referências
 [Churn Dataset Kaggle](https://www.kaggle.com/datasets/mnassrib/telecom-churn-datasets?select=churn-bigml-20.csv)
